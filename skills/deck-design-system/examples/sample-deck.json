@@ -1,0 +1,598 @@
+{
+ "theme": "ledger",
+ "logo_a": "LOGO A",
+ "logo_b": "LOGO B",
+ "_note": "Placeholder content only: lorem ipsum text and 00 numbers. Chart values are arbitrary geometry; labels print 00.",
+ "slides": [
+  {
+   "type": "cover",
+   "title": "Lorem\nIpsum",
+   "subtitle": "Dolor sit amet · 00.00.0000"
+  },
+  {
+   "type": "content",
+   "layout": "L03",
+   "tag": "LOREM",
+   "title": "Lorem ipsum dolor sit amet",
+   "blocks": [
+    {
+     "kind": "cards",
+     "box": [
+      3,
+      21,
+      94,
+      50
+     ],
+     "cols": 2,
+     "body_size": 11,
+     "items": [
+      {
+       "title": "Lorem ipsum",
+       "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+      },
+      {
+       "title": "Dolor sit amet",
+       "body": "Sed do eiusmod tempor incididunt ut labore et dolore"
+      },
+      {
+       "title": "Consectetur",
+       "body": "Ut enim ad minim veniam, quis nostrud exercitation"
+      },
+      {
+       "title": "Adipiscing elit",
+       "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "divider",
+   "title": "Lorem\nipsum"
+  },
+  {
+   "type": "content",
+   "layout": "L04",
+   "tag": "LOREM · IPSUM",
+   "title": "Lorem ipsum dolor: −00% sit amet",
+   "verdict": [
+    "LOREM",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+   ],
+   "footnote": "Lorem: ipsum dolor sit amet. *Consectetur adipiscing. Source: lorem ipsum, dolor sit.",
+   "blocks": [
+    {
+     "kind": "bars",
+     "box": [
+      3,
+      21,
+      50,
+      57
+     ],
+     "kicker": "Lorem ipsum, unit",
+     "categories": [
+      "P1",
+      "P2",
+      "P3",
+      "P4*"
+     ],
+     "values": [
+      3.4,
+      4.6,
+      5.1,
+      4.9
+     ],
+     "highlight": 2,
+     "fmt": "\"00\""
+    },
+    {
+     "kind": "stats",
+     "box": [
+      56,
+      21,
+      41,
+      57
+     ],
+     "stacked": true,
+     "highlight": 2,
+     "items": [
+      {
+       "value": "00%",
+       "label": "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+      },
+      {
+       "value": "−00%",
+       "label": "Sed do eiusmod tempor incididunt ut labore et dolore"
+      },
+      {
+       "value": "00–00%",
+       "label": "Ut enim ad minim veniam, quis nostrud exercitation"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "content",
+   "layout": "L06",
+   "tag": "LOREM · DOLOR",
+   "title": "Lorem ipsum: 0-й dolor, 0-й sit, 0-й amet",
+   "verdict": [
+    "LOREM",
+    "Sed do eiusmod tempor incididunt ut labore et dolore"
+   ],
+   "footnote": "Lorem: ipsum dolor sit amet. *Consectetur adipiscing. Source: lorem ipsum, dolor sit.",
+   "blocks": [
+    {
+     "kind": "table",
+     "box": [
+      3,
+      21,
+      94,
+      57
+     ],
+     "header": [
+      "Lorem",
+      "Ipsum",
+      "Dolor",
+      "Sit",
+      "Amet",
+      "Elit"
+     ],
+     "num_cols": [
+      1,
+      2,
+      3,
+      4
+     ],
+     "highlight_row": 6,
+     "col_widths": [
+      2.2,
+      1.4,
+      1.4,
+      1.2,
+      1.6,
+      1.6
+     ],
+     "rows": [
+      [
+       "Lorem 1",
+       "00,0",
+       "+0,0%",
+       "00,0%",
+       "00,0%",
+       "lorem (0)"
+      ],
+      [
+       "Lorem 2",
+       "00,0",
+       "+0,0%",
+       "00,0%",
+       "00,0%",
+       "lorem (0)"
+      ],
+      [
+       "Lorem 3",
+       "00,0",
+       "−0,0%",
+       "00,0%",
+       "00,0%",
+       "lorem (0)"
+      ],
+      [
+       "Lorem 4",
+       "00,0",
+       "+0,0%",
+       "00,0%",
+       "00,0%",
+       "lorem (0)"
+      ],
+      [
+       "Lorem 5",
+       "00,0",
+       "+0,0%",
+       "00,0%",
+       "00,0%",
+       "lorem (0)"
+      ],
+      [
+       "Lorem 6",
+       "00,0",
+       "−0,0%",
+       "00,0%",
+       "00,0%",
+       "lorem (0)"
+      ],
+      [
+       "Ipsum",
+       "00,0",
+       "+0,0%",
+       "00,0%",
+       "00,0%",
+       "lorem (0)"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "content",
+   "layout": "L07",
+   "tag": "LOREM · IPSUM",
+   "title": "Lorem ipsum dolor sit, amet consectetur",
+   "verdict": [
+    "LOREM",
+    "Ut enim ad minim veniam, quis nostrud exercitation"
+   ],
+   "footnote": "Lorem: ipsum dolor sit amet. *Consectetur adipiscing. Source: lorem ipsum, dolor sit.",
+   "blocks": [
+    {
+     "kind": "ladder",
+     "box": [
+      3,
+      21,
+      94,
+      54
+     ],
+     "gap_header": "GAP",
+     "rows": [
+      {
+       "label": "Lorem",
+       "sub": "ipsum",
+       "pos": 2,
+       "gap": "+0,0"
+      },
+      {
+       "label": "Dolor",
+       "sub": "sit",
+       "pos": 4,
+       "gap": "+0,0"
+      },
+      {
+       "label": "Amet",
+       "sub": "elit",
+       "pos": 5,
+       "gap": "+00%"
+      },
+      {
+       "label": "Consectetur",
+       "sub": "sed",
+       "pos": 6,
+       "gap": "0,0×"
+      },
+      {
+       "label": "Adipiscing",
+       "sub": "tempor",
+       "pos": 9,
+       "gap": "+00"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "content",
+   "layout": "L08",
+   "tag": "LOREM · SUMMARY",
+   "title": "Lorem ipsum dolor sit amet",
+   "footnote": "Lorem ipsum 0–0.",
+   "blocks": [
+    {
+     "kind": "cards",
+     "box": [
+      3,
+      21,
+      94,
+      48
+     ],
+     "cols": 2,
+     "numbered": false,
+     "body_size": 11.5,
+     "items": [
+      {
+       "kicker": "LOREM",
+       "title": "Lorem ipsum dolor",
+       "body": [
+        "01  Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        "02  Sed do eiusmod tempor incididunt ut labore et dolore",
+        "03  Ut enim ad minim veniam, quis nostrud exercitation"
+       ]
+      },
+      {
+       "kicker": "IPSUM",
+       "title": "Sit amet consectetur",
+       "body": [
+        "01  Sed do eiusmod tempor incididunt ut labore et dolore",
+        "02  Ut enim ad minim veniam, quis nostrud exercitation",
+        "03  Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "divider",
+   "title": "Dolor\nsit amet"
+  },
+  {
+   "type": "content",
+   "layout": "L09",
+   "tag": "LOREM · IPSUM",
+   "title": "Lorem ipsum: 00% dolor sit 00% amet",
+   "verdict": [
+    "LOREM",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+   ],
+   "footnote": "Lorem: ipsum dolor sit amet. *Consectetur adipiscing. Source: lorem ipsum, dolor sit.",
+   "blocks": [
+    {
+     "kind": "cards",
+     "box": [
+      3,
+      21,
+      94,
+      57
+     ],
+     "cols": 3,
+     "numbered": false,
+     "invert": 2,
+     "body_size": 10.5,
+     "items": [
+      {
+       "kicker": "A · LOREM",
+       "value": "00% lorem",
+       "body": "ipsum 00%\n\n00,0 · 0 000 · 0,0",
+       "foot_kicker": "DOLOR",
+       "foot": "Lorem ipsum dolor"
+      },
+      {
+       "kicker": "B · IPSUM",
+       "value": "00% lorem",
+       "body": "ipsum 00%\n\n00,0 · 000 · 0,0",
+       "foot_kicker": "DOLOR",
+       "foot": "Sit amet consectetur"
+      },
+      {
+       "kicker": "C · DOLOR",
+       "value": "00% lorem",
+       "body": "ipsum 00%\n\n00,0 · 000 · 00",
+       "foot_kicker": "DOLOR",
+       "foot": "Adipiscing elit sed"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "content",
+   "layout": "L10",
+   "tag": "LOREM · DOLOR",
+   "title": "Lorem ipsum: 00–00% dolor, sit amet 0%",
+   "verdict": [
+    "LOREM",
+    "Sed do eiusmod tempor incididunt ut labore et dolore"
+   ],
+   "footnote": "Lorem: ipsum dolor sit amet. *Consectetur adipiscing. Source: lorem ipsum, dolor sit.",
+   "blocks": [
+    {
+     "kind": "bars",
+     "box": [
+      3,
+      21,
+      58,
+      57
+     ],
+     "horizontal": true,
+     "kicker": "Lorem ipsum, %",
+     "categories": [
+      "Lorem 1",
+      "Lorem 2",
+      "Lorem 3",
+      "Lorem 4",
+      "Lorem 5",
+      "Ipsum"
+     ],
+     "values": [
+      25,
+      20,
+      15,
+      15,
+      10,
+      5
+     ],
+     "highlight": 5,
+     "highlight_color": "accent_2",
+     "fmt": "\"00\"",
+     "neutral": "accent"
+    },
+    {
+     "kind": "cards",
+     "box": [
+      63,
+      21,
+      34,
+      57
+     ],
+     "cols": 1,
+     "items": [
+      {
+       "kicker": "LOREM",
+       "title": "Lorem ipsum dolor",
+       "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+      },
+      {
+       "title": "Sit amet consectetur",
+       "body": "Sed do eiusmod tempor incididunt ut labore et dolore"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "content",
+   "layout": "L17",
+   "tag": "LOREM · IPSUM",
+   "title": "Lorem ipsum dolor sit amet consectetur",
+   "verdict": [
+    "LOREM",
+    "Ut enim ad minim veniam, quis nostrud exercitation"
+   ],
+   "footnote": "Lorem: ipsum dolor sit amet. *Consectetur adipiscing. Source: lorem ipsum, dolor sit.",
+   "blocks": [
+    {
+     "kind": "bars",
+     "box": [
+      3,
+      21,
+      60,
+      57
+     ],
+     "categories": [
+      "Lorem 1",
+      "Lorem 2",
+      "Lorem 3"
+     ],
+     "values": [
+      190,
+      2350,
+      5200
+     ],
+     "highlight": 2,
+     "fmt": "\"00\"",
+     "kicker": "Lorem ipsum, unit"
+    },
+    {
+     "kind": "stats",
+     "box": [
+      65,
+      21,
+      32,
+      57
+     ],
+     "stacked": true,
+     "highlight": 2,
+     "items": [
+      {
+       "value": "+00–00",
+       "label": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+       "color": "accent"
+      },
+      {
+       "value": "+0,0–0,0",
+       "label": "Sed do eiusmod tempor incididunt ut labore et dolore"
+      },
+      {
+       "value": "+0,0–0,0",
+       "label": "Ut enim ad minim veniam, quis nostrud exercitation"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "content",
+   "layout": "L15",
+   "tag": "LOREM · IPSUM",
+   "title": "Lorem ipsum: dolor sit amet in 0 steps",
+   "verdict": [
+    "LOREM",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+   ],
+   "footnote": "Lorem: ipsum dolor sit amet.",
+   "blocks": [
+    {
+     "kind": "timeline",
+     "box": [
+      3,
+      22,
+      94,
+      50
+     ],
+     "phases": [
+      {
+       "when": "Period 1–2",
+       "title": "Lorem ipsum",
+       "items": [
+        "Lorem ipsum dolor",
+        "Sit amet consectetur",
+        "Adipiscing elit"
+       ]
+      },
+      {
+       "when": "Period 3–5",
+       "title": "Dolor sit amet",
+       "items": [
+        "Sed do eiusmod",
+        "Tempor incididunt",
+        "Ut labore et dolore"
+       ]
+      },
+      {
+       "when": "Period 6+",
+       "title": "Consectetur",
+       "items": [
+        "Ut enim ad minim",
+        "Quis nostrud",
+        "Exercitation ullamco"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "type": "content",
+   "layout": "L33",
+   "tag": "LOREM",
+   "title": "Lorem ipsum: «dolor», sit «amet»",
+   "footnote": "Lorem: ipsum dolor.",
+   "blocks": [
+    {
+     "kind": "old_new",
+     "box": [
+      3,
+      20,
+      94,
+      68
+     ],
+     "old": "Lorem ipsum dolor sit amet",
+     "new": "Consectetur adipiscing elit sed do eiusmod",
+     "was": "lorem:",
+     "now": "ipsum:"
+    }
+   ]
+  },
+  {
+   "type": "content",
+   "layout": "L22",
+   "tag": "LOREM",
+   "title": "Lorem ipsum dolor",
+   "verdict": [
+    "LOREM",
+    "Sed do eiusmod tempor incididunt ut labore et dolore"
+   ],
+   "blocks": [
+    {
+     "kind": "steps",
+     "box": [
+      3,
+      22,
+      94,
+      55
+     ],
+     "items": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      "Sed do eiusmod tempor incididunt ut labore et dolore",
+      "Ut enim ad minim veniam, quis nostrud exercitation",
+      "Duis aute irure dolor in reprehenderit in voluptate"
+     ]
+    }
+   ]
+  },
+  {
+   "type": "closing",
+   "title": "Lorem\nipsum dolor"
+  }
+ ]
+}

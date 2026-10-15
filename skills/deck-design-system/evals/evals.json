@@ -1,0 +1,23 @@
+{
+  "skill_name": "deck-design-system",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Собери презентацию на 12 слайдов в pptx: вступление, три раздела с графиком, таблицей и сравнением, итоговый слайд и следующие шаги. Текст пока lorem ipsum.",
+      "expected_output": "PPTX in one theme with section tags, titles, verdict bars, footnotes, a section summary slide and next steps; built with build_pptx.py or deckkit.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Make a 10-slide HTML deck template in the 'signal' theme with brand colour #0A7CFF: cover, metric row, before/after, timeline, scenarios, closing.",
+      "expected_output": "HTML deck from templates/deck.html with data-theme=signal and --accent overridden; layouts L01, L05, L18/L33, L15, L16/L17, L36.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "У меня 40 слайдов из разных презентаций в разных стилях, хочу собрать их в одну единообразную колоду. Как лучше?",
+      "expected_output": "Pick one theme, re-skin every slide into it (no mixed motifs), keep the shared grammar, rewrite titles as statements, run the QA checklist.",
+      "files": []
+    }
+  ]
+}

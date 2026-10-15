@@ -37,3 +37,7 @@ python3 -m unittest discover -s tests -v
 `validate` сверяет артефактные хеши, immutable ID, версии, количество слайдов, уникальность shape paths и **повторное извлечение исходника** с inventory. Несоответствие даёт ненулевой код. Тесты включают испорченные ZIP, traversal, конфликты, подмену исходника/inventory, несовместимую схему и семантическую подмену даже с пересчитанным хешем.
 
 Подробности процесса: [HARNESS.md](HARNESS.md). Контракт дизайна: [DESIGN.md](DESIGN.md). Формат: [docs/FORMAT.md](docs/FORMAT.md). Навык не устанавливается глобально: [SKILL.md](skills/presentation-design-library/SKILL.md).
+
+## Дизайн-система презентаций
+
+[skills/deck-design-system](skills/deck-design-system/README.md) — тематически нейтральная дизайн-система для ИИ-агентов: грамматика слайда, 39 раскладок, правила графиков и таблиц, 6 изолированных тем, HTML-шаблон и сборщик PPTX. Все примеры — lorem ipsum и цифры-заглушки.
