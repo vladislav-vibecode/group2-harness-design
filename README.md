@@ -1,43 +1,81 @@
-# Presentation Design Harness
+# deck-design-system
 
-Пополняемая локальная библиотека **только дизайна** презентаций: геометрия, типографика, цвет, заливки, контуры, эффекты, изображения, таблицы, диаграммы и композиционные примитивы. Не анализирует маркетинг, стратегию, результаты или корректность содержания.
+**An agent skill for designing presentation decks** — as HTML slides or editable PPTX.
+A topic-agnostic design system: slide grammar, 39 layout patterns, chart/table rules and
+6 isolated visual themes. All examples are placeholder content (lorem ipsum, `00`).
 
-## Запуск
+> RU: Скилл для ИИ-агентов и LLM: дизайн-система презентаций. Общая «грамматика» слайда
+> + 6 изолированных визуальных тем. Все примеры — lorem ipsum и цифры-заглушки.
 
-Python 3.10+, только стандартная библиотека, без сети и установки зависимостей. Из корня проекта:
+![Six themes, same markup](examples/previews/themes-html.png)
 
-```sh
-python3 harness.py ingest /path/to/local-source.pptx
-python3 harness.py validate
-python3 harness.py stats
-python3 -m unittest discover -s tests -v
+## Two layers
+
+| Layer | Controls | Scope |
+|---|---|---|
+| **Grammar** | grid, header → title → body → verdict bar → footnote, type scale, components, chart rules, deck structure | shared by every deck |
+| **Theme** | colour tokens, title weight, tag shape, cover/divider art, card treatment | exactly one per deck |
+
+The grammar makes a deck readable (titles + verdict bars carry the story); the theme only
+sets the mood. Grammar applies everywhere; themes never mix. `accent` is the brand-colour slot.
+
+## Contents
+
+```
+SKILL.md                     entry point for the agent
+references/
+  01-deck-structure.md       deck shapes by length, section recipes, title formulas
+  02-slide-grammar.md        grid in %, bands, components, typography, copy rules
+  03-layout-catalog.md       39 layout patterns with wireframes (L01–L39)
+  04-data-viz.md             chart & table rules
+  05-themes.md               6 themes, isolation rules, motif recipes, brand slot
+  06-qa-checklist.md         pre-delivery checklist
+  07-placeholder-content.md  lorem / 00 conventions for templates
+themes/themes.json           single source of tokens (CSS + PPTX)
+themes/themes.css            generated CSS variables
+templates/deck.html          self-contained HTML deck, all themes, theme switcher
+scripts/deckkit.py           PPTX component library
+scripts/build_pptx.py        JSON spec → .pptx
+scripts/export_pdf.py        HTML deck → PDF / PNG (Playwright)
+scripts/gen_theme_css.py     themes.json → CSS
+examples/sample-deck.json    14-slide placeholder spec
+examples/previews/           rendered previews
+evals/evals.json             test prompts
 ```
 
-`--library private/library` задаётся перед подкомандой. Исходник копируется под SHA-256; повторный ingest идентичных байтов идемпотентен. Изменившийся файл получает новый ID. Ничего не перезаписывать вручную в зарегистрированном source-каталоге.
+## Quick start
 
-## Структура и приватность
+```bash
+pip install python-pptx lxml playwright && playwright install chromium
 
-- `harness.py`, `tests/`, `schemas/`, `docs/`, `DESIGN.md`, `HARNESS.md`, `skills/` — публичный универсальный пакет.
-- `private/library/registry.json` — локальный реестр с версиями, хешами и статусами.
-- `private/library/sources/<sha256>/source.pptx` — неизменяемые байты оригинала.
-- Там же `inventory.json`, `tokens.json`, `docs/ELEMENTS.md` — **приватные** тексты, подробные элементы и кандидаты токенов с происхождением.
-- `private/visual-review/` — локальные рендеры и отдельный визуальный разбор `VISUAL-DESIGN.md`, когда он подготовлен. Extractor не изменяет этот каталог и не утверждает, что визуальный review выполнен.
-- `dist/` — архивы, не для git. Публичный архив собирается по allowlist; приватный содержит всю локальную библиотеку и визуальный review и не предназначен для GitHub.
+python scripts/build_pptx.py examples/sample-deck.json out.pptx --theme bloom --accent "#0A84FF"
+python scripts/export_pdf.py templates/deck.html deck.pdf --theme signal --png previews/
+```
 
-Не добавлять клиентские презентации, изображения, тексты, производные токены и рендеры в публичные docs или коммиты. `.gitignore` — предохранитель, а не DLP. Проверять `git status --short` и содержимое публичного ZIP перед передачей. `git push` не выполняется.
+Font: **Manrope** (Google Fonts, SIL OFL); fallbacks Inter / Arial.
 
-## Что действительно извлечено
+## Using it as a skill
 
-Порядок слайдов из presentation relationships; рекурсивные native shapes; исходные EMU и групповые transforms; текстовые labels/runs, прямые размеры/семейства/начертания; заливки, контуры, эффекты; изображения с SHA-256 и crop; таблицы, chart references и XML chart parts; layout/master/theme и фон с источником наследования. Неизвестные конструкции сохраняются в `raw_xml`; исходные theme/layout/master XML сохраняются полностью.
+- **Claude Code / Agent SDK**: copy the folder into `.claude/skills/deck-design-system/`
+  (project) or `~/.claude/skills/` (user).
+- **Claude.ai**: zip the folder and upload it as a skill.
+- **Other agents / LLMs**: put `SKILL.md` in the system prompt and give access to `references/`.
 
-Тема разрешается для scheme colors через color map, поддержаны tint/shade/luminance, alpha сохраняется отдельно. Это не полный DrawingML renderer: произвольные preset colors, все theme style refs, итоговая каскадная типографика и мировые bounding boxes вращающихся групп не вычисляются. `null` не превращается в выдуманный default. XML-статистика не равна визуальному токену.
+## PPTX output (sample spec)
 
-## Проверки
+![PPTX sample](examples/previews/pptx-sample.png)
 
-`validate` сверяет артефактные хеши, immutable ID, версии, количество слайдов, уникальность shape paths и **повторное извлечение исходника** с inventory. Несоответствие даёт ненулевой код. Тесты включают испорченные ZIP, traversal, конфликты, подмену исходника/inventory, несовместимую схему и семантическую подмену даже с пересчитанным хешем.
+## Themes
 
-Подробности процесса: [HARNESS.md](HARNESS.md). Контракт дизайна: [DESIGN.md](DESIGN.md). Формат: [docs/FORMAT.md](docs/FORMAT.md). Навык не устанавливается глобально: [SKILL.md](skills/presentation-design-library/SKILL.md).
+| | Theme | Mood |
+|---|---|---|
+| ![](examples/previews/ledger.png) | **ledger** | dense, analytical, formal |
+| ![](examples/previews/horizon.png) | **horizon** | calm, structured |
+| ![](examples/previews/bloom.png) | **bloom** | warm, friendly |
+| ![](examples/previews/signal.png) | **signal** | bold, energetic |
+| ![](examples/previews/aurora.png) | **aurora** | soft, modern |
+| ![](examples/previews/ember.png) | **ember** | compact, direct |
 
-## Дизайн-система презентаций
+## License
 
-[skills/deck-design-system](skills/deck-design-system/README.md) — тематически нейтральная дизайн-система для ИИ-агентов: грамматика слайда, 39 раскладок, правила графиков и таблиц, 6 изолированных тем, HTML-шаблон и сборщик PPTX. Все примеры — lorem ipsum и цифры-заглушки.
+MIT for code and documentation. Manrope is licensed under the SIL Open Font License.
